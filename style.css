@@ -1,25 +1,139 @@
-/* style.css */
-body {
-  font-family: Arial, sans-serif;
+/* ===== RESET ===== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== GLOBAL STYLES ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #121212; /* Dark grey background */
+  color: #e0e0e0; /* Light grey text */
   line-height: 1.6;
 }
 
+/* ===== NAVIGATION ===== */
+nav {
+  position: sticky;
+  top: 0;
+  background: #1f1f1f; /* Slightly lighter than body */
+  padding: 0.8rem;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff6600; /* Accent color */
+}
+
+/* ===== HEADER ===== */
 header {
-  background: #222;
-  color: #fff;
+  background: #1a1a1a;
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 1rem;
+  border-bottom: 1px solid #333;
 }
 
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+/* ===== SECTIONS ===== */
 section {
-  padding: 1.5rem;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1rem;
 }
 
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6600; /* Accent */
+  border-bottom: 2px solid #ff6600;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+/* ===== LISTS ===== */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: #1e1e1e;
+  margin-bottom: 0.8rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
+}
+
+ul li:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== FOOTER ===== */
 footer {
-  background: #eee;
+  background: #1f1f1f;
+  color: #aaa;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   margin-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+footer a {
+  color: #ff6600;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+}
+/* ===== REVEAL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
